@@ -10,6 +10,8 @@ try {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export", // 👈 THIS IS THE KEY LINE
+
   eslint: {
     ignoreDuringBuilds: true,
   },
