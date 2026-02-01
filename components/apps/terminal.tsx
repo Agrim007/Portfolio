@@ -1,7 +1,6 @@
-"use client"
+// "use client"
 
 import type React from "react"
-
 import { useState, useRef, useEffect } from "react"
 
 interface TerminalProps {
@@ -21,7 +20,6 @@ export default function Terminal({ isDarkMode = true }: TerminalProps) {
   const textColor = "text-green-400"
 
   useEffect(() => {
-    // Focus input when terminal is clicked
     const handleClick = () => {
       inputRef.current?.focus()
     }
@@ -30,7 +28,6 @@ export default function Terminal({ isDarkMode = true }: TerminalProps) {
     if (terminal) {
       terminal.addEventListener("click", handleClick)
 
-      // Initial welcome message
       setHistory([
         "Last login: " + new Date().toLocaleString(),
         "Welcome to macOS Terminal",
@@ -40,14 +37,11 @@ export default function Terminal({ isDarkMode = true }: TerminalProps) {
     }
 
     return () => {
-      if (terminal) {
-        terminal.removeEventListener("click", handleClick)
-      }
+      terminal?.removeEventListener("click", handleClick)
     }
   }, [])
 
   useEffect(() => {
-    // Scroll to bottom when history changes
     if (terminalRef.current) {
       terminalRef.current.scrollTop = terminalRef.current.scrollHeight
     }
@@ -91,24 +85,22 @@ export default function Terminal({ isDarkMode = true }: TerminalProps) {
     const args = command.split(" ")
     const mainCommand = args[0]
 
-    // Add command to history
-    setHistory((prev) => [...prev, `daniel@macbook-pro ~ $ ${cmd}`, ""])
+    setHistory((prev) => [...prev, `agrim@macbook-pro ~ $ ${cmd}`, ""])
 
-    // Process command
     switch (mainCommand) {
       case "help":
         setHistory((prev) => [
           ...prev,
           "Available commands:",
-          "  help - Show this help message",
-          "  clear - Clear the terminal",
-          "  echo [text] - Print text",
-          "  date - Show current date and time",
-          "  ls - List files",
-          "  whoami - Show current user",
-          "  about - About me",
-          "  skills - My technical skills",
-          "  contact - Contact information",
+          "  help     - Show this help message",
+          "  clear    - Clear the terminal",
+          "  echo     - Print text",
+          "  date     - Show current date and time",
+          "  ls       - List files",
+          "  whoami   - Show current user",
+          "  about    - About me",
+          "  skills   - Technical skills",
+          "  contact  - Contact information",
           "",
         ])
         break
@@ -118,8 +110,7 @@ export default function Terminal({ isDarkMode = true }: TerminalProps) {
         break
 
       case "echo":
-        const echoText = args.slice(1).join(" ")
-        setHistory((prev) => [...prev, echoText, ""])
+        setHistory((prev) => [...prev, args.slice(1).join(" "), ""])
         break
 
       case "date":
@@ -127,78 +118,81 @@ export default function Terminal({ isDarkMode = true }: TerminalProps) {
         break
 
       case "ls":
-        setHistory((prev) => [...prev, "Documents", "Projects", "Downloads", "Desktop", "Music", "Pictures", "Videos", ""])
+        setHistory((prev) => [
+          ...prev,
+          "Documents",
+          "Projects",
+          "Downloads",
+          "Desktop",
+          "Music",
+          "Pictures",
+          "Videos",
+          "",
+        ])
         break
 
       case "whoami":
-        setHistory((prev) => [...prev, "daniel", ""])
+        setHistory((prev) => [...prev, "agrim", ""])
         break
 
       case "about":
         setHistory((prev) => [
           ...prev,
-          "┌─────────────────────────────────────┐",
-          "│ Daniel Prior                        │",
-          "│ Frontend Developer & UI/UX Designer │",
-          "└─────────────────────────────────────┘",
+          "┌──────────────────────────────┐",
+          "│ Agrim Gupta                  │",
+          "│ Computer Science Graduate    │",
+          "│ Backend & API Developer      │",
+          "└──────────────────────────────┘",
           "",
-          "I'm a passionate web developer with expertise in",
-          "creating beautiful, responsive, and user-friendly",
-          "web applications. I love working with modern",
-          "frameworks and technologies to build",
-          "seamless user experiences. I have a strong",
-          "background in both frontend and backend",
-          "development, and I'm always eager to learn",
-          "new skills and improve my craft.",
+          "2025 Computer Science graduate with strong",
+          "foundations in backend development, APIs,",
+          "and quality engineering.",
+          "",
+          "Focused on building scalable, reliable",
+          "and data-driven applications using",
+          "modern backend technologies.",
           "",
         ])
         break
 
-        case "skills":
-          setHistory((prev) => [
-            ...prev,
-            "┌──────────────┐",
-            "│   Skills     │",
-            "└──────────────┘",
-            "",
-            "Frontend:",
-            "• React / Next.js",
-            "• Vue.js / Nuxt.js",
-            "• TypeScript / JavaScript",
-            "• Tailwind CSS / SCSS",
-            "• UI/UX Design",
-            "• Responsive Web Development",
-            "• Vite / Webpack",
-            "• WordPress, Umbraco etc.",
-            "",
-            "Backend:",
-            "• Node.js / Express",
-            "• PHP / Laravel / Slim",
-            "• Python / Django",
-            "• Rust & Go (learning)",
-            "• SQL (MySQL, PostgreSQL)",
-            "• NoSQL (MongoDB)",
-            "• RESTful APIs / GraphQL",
-            "",
-            "Game Development:",
-            "• Unity / Unreal Engine",
-            "• C# & C++",
-            "• Game Design Principles",
-            "• Game Mechanics & Systems",
-            "• Blender 3D / 3D Modeling",
-            "• Animations for agri machinery & vehicles",
-            "• Godot Engine",
-            "",
-            "DevOps & Tools:",
-            "• Docker / Containerization",
-            "• CI/CD Pipelines",
-            "• Git / GitHub",
-            "• Agile / Scrum Methodologies",
-            "• AWS / Cloud Services",
-            "• Linux / Unix",
-            "",
-          ])
-          break
+      case "skills":
+        setHistory((prev) => [
+          ...prev,
+          "┌──────────────┐",
+          "│   Skills     │",
+          "└──────────────┘",
+          "",
+          "Programming:",
+          "• Python",
+          "• Java",
+          "• C++",
+          "• JavaScript",
+          "",
+          "Backend & APIs:",
+          "• FastAPI / Flask",
+          "• RESTful APIs",
+          "• Microservices",
+          "",
+          "Testing & QA:",
+          "• PyTest",
+          "• Selenium",
+          "• Postman",
+          "• JUnit",
+          "• Jenkins",
+          "",
+          "Databases & Data:",
+          "• PostgreSQL",
+          "• MySQL",
+          "• MongoDB",
+          "• NumPy / Pandas",
+          "",
+          "Cloud & Tools:",
+          "• Docker",
+          "• Git / GitHub",
+          "• AWS (Basics)",
+          "",
+        ])
+        break
 
       case "contact":
         setHistory((prev) => [
@@ -207,10 +201,9 @@ export default function Terminal({ isDarkMode = true }: TerminalProps) {
           "│ Contact │",
           "└─────────┘",
           "",
-          "Email: mail@danielprior.dk",
-          "GitHub: github.com/daprior",
-          "LinkedIn: linkedin.com/in/daniel-prior-53a679195/",
-          "Website: danielprior.dev",
+          "Email: wa1agrim@gmail.com",
+          "GitHub: github.com/Agrim007",
+          "LinkedIn: linkedin.com/in/agrim-gupta/",
           "",
         ])
         break
@@ -226,7 +219,10 @@ export default function Terminal({ isDarkMode = true }: TerminalProps) {
   }
 
   return (
-    <div ref={terminalRef} className={`h-full ${bgColor} ${textColor} p-4 font-mono text-sm overflow-auto`}>
+    <div
+      ref={terminalRef}
+      className={`h-full ${bgColor} ${textColor} p-4 font-mono text-sm overflow-auto`}
+    >
       {history.map((line, index) => (
         <div key={index} className="whitespace-pre-wrap">
           {line}
@@ -234,7 +230,7 @@ export default function Terminal({ isDarkMode = true }: TerminalProps) {
       ))}
 
       <div className="flex">
-        <span className="mr-2">daniel@macbook-pro ~ $</span>
+        <span className="mr-2">agrim@macbook-pro ~ $</span>
         <input
           ref={inputRef}
           type="text"

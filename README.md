@@ -1,6 +1,6 @@
 # 🍎 macOS Portfolio
 
-A stunning, interactive macOS-inspired portfolio website built with Next.js and Tailwind CSS.
+A stunning, interactive macOS-inspired portfolio website built with **Next.js** and **Tailwind CSS**.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Next.js](https://img.shields.io/badge/Next.js-13%2B-black)](https://nextjs.org/)
@@ -10,53 +10,60 @@ A stunning, interactive macOS-inspired portfolio website built with Next.js and 
 
 ## 👨‍💻 Demo
 
-Demo Link: [http://danielprior.dev](http://danielprior.dev)
+Coming Soon  
+_(Will be updated after deployment)_
+
+---
+
 
 ### ✨ Features
 
 - 🖥️ Realistic macOS interface with dark/light mode
 - 🚀 Interactive desktop experience with working windows
 - 🔍 Spotlight search functionality
-- 🧩 Multiple apps to showcase your skills and projects:
-  - Safari (For browsing)
-  - Notes (for bio/resume/about)
+- 🧩 Multiple apps to showcase skills and projects:
+  - Safari (browsing & links)
+  - Notes (resume / bio)
   - Terminal (interactive command line)
-  - VSCode (code samples)
-  - Mail (contact link)
+  - VSCode (project source viewer)
+  - Mail (contact)
   - GitHub (profile link)
   - Spotify (music player)
   - YouTube (video channel)
-  - FaceTime (video chat demo)
-  - Snake (just for fun)
+  - FaceTime (demo)
+  - Snake (game)
   - Weather (mock data)
-- 🎛️ Working Control Center with brightness and volume controls
+- 🎛️ Control Center with brightness & volume controls
 - 🔄 Boot, login, sleep, and shutdown sequences
 - 📱 Almost fully responsive design
 - ⚡ Fast and optimized performance
+
+---
 
 #### 🚀 Getting Started
 
 ##### Prerequisites
 
-- Node.js 16.x or higher
-- npm or yarn
+- Node.js **16.x or higher**
+- pnpm / npm / yarn
+
+---
 
 ##### Installation
 
-1. Clone the repository:
 
-```bash
-git clone https://github.com/daprior/danielprior-macos.git
-cd macos-portfolio
 
 2. Install 
 
+pnpm install
+# or
 npm install
 # or
 yarn install
 
 3. Run the development server:
-
+pnpm dev
+# or
 npm run dev
 # or
 yarn dev
@@ -66,54 +73,67 @@ yarn dev
 
 ## 🎨 Customization
 
-### Personal Information
-
 Edit the following files to customize your portfolio:
 
-- `components/apps/notes.tsx` - Your bio and personal information
-- `components/apps/terminal.tsx` - Custom terminal commands and responses
+components/apps/notes.tsx – Resume & bio
+
+components/apps/terminal.tsx – Terminal commands
+
+components/login-screen.tsx – Login name & avatar
+
+components/menubar/Menubar.tsx – Logout label
 
 ### Social Links
 
-Update your social media links in:
+Update social media and contact links in:
 
-- `components/apps/github.tsx` - GitHub profile URL
-- `components/apps/youtube.tsx` - YouTube channel URL
-- `components/apps/mail.tsx` - Email address
-- `components/apps/safari.tsx` - Featured websites and social links
+components/apps/github.tsx
 
+components/apps/mail.tsx
+
+components/apps/safari.tsx
 
 ### Appearance
 
-- Replace wallpapers in `public/wallpaper-day.jpg` and `public/wallpaper-night.jpg`
-- Update app icons in the `public` folder
-- Modify the color scheme in `tailwind.config.ts`
+Replace wallpapers:
 
+public/wallpaper-day.jpg
+
+public/wallpaper-night.jpg
+
+Update app icons in the public/ folder
+
+Modify the color scheme in tailwind.config.ts
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
-**Important**: If you use this template for your own portfolio, you must include attribution to the original author. Please keep the attribution in the footer or about section of your site.
+Important:
+If you use this template for your own portfolio, you must include attribution to the original author.
+Please keep the attribution in the footer or About section of your site.
 
 ## 🙏 Acknowledgments
 
-- Special thanks to [Renovamen](https://github.com/Renovamen/playground-macos) for the original inspiration for this macOS-themed portfolio concept.
-- Icons from [Lucide React](https://lucide.dev/)
-- UI components from [shadcn/ui](https://ui.shadcn.com/)
-- Initial layout jump-started with v0 — [V0/Vercel](https://v0.dev/)
-- Built with [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/)
+Original inspiration: https://github.com/Renovamen/playground-macos
 
+Icons from: https://lucide.dev/
+
+UI components from: https://ui.shadcn.com/
+
+Initial layout jump-started with v0 — https://v0.dev/
+
+Built with Next.js and Tailwind CSS
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/daprior/danielprior-macos/issues).
+Contributions, issues, and feature requests are welcome.
+Feel free to open an issue or submit a pull request.
 
 ## 📧 Contact
 
-Daniel Prior - [mail@danielprior.dk](mailto:mail@danielprior.dk)
+DAgrim Gupta
+📧 Email: wa1agrim@gmail.com
 
-Project Link: [https://github.com/daprior/danielprior-macos](https://github.com/daprior/danielprior-macos)
+🐙 GitHub: https://github.com/Agrim007
 
----
-
-<p align="center"><sub>Made with ❤️ by Daniel</sub></p>
+<p align="center"><sub>Made with ❤️ by Agrim</sub></p> ```

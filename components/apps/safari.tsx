@@ -8,7 +8,8 @@ interface SafariProps {
 }
 
 export default function Safari({ isDarkMode = true }: SafariProps) {
-  const [url, setUrl] = useState("https://danielprior.dev")
+  // const [url, setUrl] = useState("https://danielprior.dev")
+  const [url, setUrl] = useState("https://github.com/Agrim007")
   const [isLoading, setIsLoading] = useState(false)
   const [activeTab, setActiveTab] = useState("home")
   const [wifiEnabled, setWifiEnabled] = useState(true)
@@ -47,22 +48,22 @@ export default function Safari({ isDarkMode = true }: SafariProps) {
   const socialLinks = [
     {
       title: "LinkedIn",
-      url: "https://www.linkedin.com/in/daniel-prior-53a679195/",
+      url: "https://www.linkedin.com/in/agrim-gupta/",
       icon: "/linkedin.png",
     },
     {
       title: "GitHub",
-      url: "https://github.com/daprior",
+      url: "https://github.com/Agrim007",
       icon: "/github.png",
     },
     {
       title: "YouTube",
-      url: "https://www.youtube.com/@DanielPrior0",
+      url: "https://www.youtube.com/@agrimgupta50",
       icon: "/youtube.png",
     },
     {
       title: "Email",
-      url: "mailto:mail@danielprior.dk",
+      url: "mailto:wa1agrim@gmail.com",
       icon: "/mail.png",
     },
   ]
@@ -216,25 +217,26 @@ export default function Safari({ isDarkMode = true }: SafariProps) {
 
               <div className="mt-8 max-w-2xl mx-auto">
                 <div className={`p-6 rounded-lg ${cardBg}`}>
-                  <h3 className="text-xl font-semibold mb-4">Daniel Prior - Portfolio</h3>
+                  <h3 className="text-xl font-semibold mb-4">Agrim Gupta - Portfolio</h3>
                   <p className="mb-4">
-                    Welcome to my portfolio website! I'm a frontend developer specializing in creating beautiful,
-                    responsive, and user-friendly web applications.
+                    Welcome to my portfolio! I’m a Computer Science graduate (2025) with a strong focus on backend
+                    development, APIs, quality engineering and Machine Learning.
                   </p>
                   <p className="mb-4">
-                    With expertise in React, Next.js, TypeScript, and modern CSS frameworks, I build performant web
-                    experiences that users love.
+                    I work with Python, FastAPI, RESTful APIs, databases, and automated testing tools to build
+                    scalable, reliable, and data-driven applications.
                   </p>
                   <div className="flex justify-end">
                     <button
                       className={`px-4 py-2 rounded ${isDarkMode ? "bg-blue-600 hover:bg-blue-700" : "bg-blue-500 hover:bg-blue-600"} text-white`}
                     >
-                      View Projects
+                      Explore Projects
                     </button>
                   </div>
                 </div>
               </div>
             </div>
+            
           )
         )}
       </div>
